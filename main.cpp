@@ -21,6 +21,7 @@ int main(){
     } 
     */
 
+    int cont = -1;
     char buffer_c, buffer_next;
     std::string buffer_s;
     string token[] = {"Res_do", "Ch_open", "Ch_close", "Res_while", "P_open", "Numero", "Op_rel", "P_close", "end"};
@@ -45,37 +46,44 @@ int main(){
 
                 if(buffer_s == "do" && (buffer_next == ' ' || buffer_next == '{')){
                     lexemas.push_back(buffer_s);
-                    cout << "Vetor de lexemas: " + lexemas[0] + "\n";
+                    cont++;
+                    cout << "Vetor de lexemas: " + lexemas[cont] + "\n";
                     buffer_s = "";
                 }
                 else if(buffer_s == "{"){
                     lexemas.push_back(buffer_s);
-                    cout << "Vetor de lexemas: " + lexemas[1] + "\n";
+                    cont++;
+                    cout << "Vetor de lexemas: " + lexemas[cont] + "\n";
                     buffer_s = "";
                 }
                 else if(buffer_s == "}"){
                     lexemas.push_back(buffer_s);
-                    cout << "Vetor de lexemas: " + lexemas[2] + "\n";
+                    cont++;
+                    cout << "Vetor de lexemas: " + lexemas[cont] + "\n";
                     buffer_s = "";
                 }
                 else if(buffer_s == "while" && (buffer_next == ' ' || buffer_next == '(')){
                     lexemas.push_back(buffer_s);
-                    cout << "Vetor de lexemas: " + lexemas[3] + "\n";
+                    cont++;
+                    cout << "Vetor de lexemas: " + lexemas[cont] + "\n";
                     buffer_s = "";
                 }
                 else if(buffer_s == "("){
                     lexemas.push_back(buffer_s);
-                    cout << "Vetor de lexemas: " + lexemas[4] + "\n";
+                    cont++;
+                    cout << "Vetor de lexemas: " + lexemas[cont] + "\n";
                     buffer_s = "";
                 }
                 else if(buffer_s == ")"){
                     lexemas.push_back(buffer_s);
-                    cout << "Vetor de lexemas: " + lexemas[5] + "\n";
+                    cont++;
+                    cout << "Vetor de lexemas: " + lexemas[cont] + "\n";
                     buffer_s = "";
                 }
                 else if(buffer_s == ";"){
                     lexemas.push_back(buffer_s);
-                    cout << "Vetor de lexemas: " + lexemas[6] + "\n";
+                    cont++;
+                    cout << "Vetor de lexemas: " + lexemas[cont] + "\n";
                     buffer_s = "";
                 }
             }
