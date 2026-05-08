@@ -41,8 +41,6 @@ int check_op(char c){
 }
 
 int main(){
-
-
     // Contador para armazenar valores em vetor de lexemas (-1 para o contador aumenta e preencher o vetor no indice 0)
     int cont = -1;
 
@@ -71,9 +69,7 @@ int main(){
                 buffer_next = myLine[i+1];
                 buffer_s += buffer_c;
 
-
                 // Verificação de palavras reservadas e identificadores com base em suas características.
-
                 //Verificação do 'do'
                 if(buffer_s == "do" && check_end(buffer_next)){
                     lexemas.push_back(buffer_s);
@@ -109,7 +105,6 @@ int main(){
                     cont++;
                     buffer_s = "";
                 }
-
                 //Verificação do ')'
                 else if(buffer_s == ")"){
                     lexemas.push_back(buffer_s);
@@ -117,7 +112,6 @@ int main(){
                     cont++;
                     buffer_s = "";
                 }
-
                 //Verificação do ';'
                 else if(buffer_s == ";"){
                     lexemas.push_back(buffer_s);
@@ -125,7 +119,6 @@ int main(){
                     cont++;
                     buffer_s = "";
                 }
-
                 //Verificação dos operadores '<, =, >'
                 else if(check_op(buffer_c) && ((buffer_next >= 'a' && buffer_next <= 'z') || buffer_next == ' ')){
                     lexemas.push_back(buffer_s);
@@ -133,7 +126,6 @@ int main(){
                     cont++;
                     buffer_s = "";
                 }
-
                 //Verificação do 'identificador'
                 else if(check_end(buffer_next)){
                     if(!check_id(buffer_s)){
@@ -144,7 +136,6 @@ int main(){
                     cont++;
                     buffer_s = "";
                 }
-                
             }
             //Removendo o caractere atual se for um espaço em branco
             else{
