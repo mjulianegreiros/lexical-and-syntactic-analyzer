@@ -56,7 +56,7 @@ int main(){
     std::vector<std::string> lexemas;
     std::vector<std::string> tokens;
 
-    ifstream myFile("codigo.txt");
+    ifstream myFile("codigo.c");
     string myLine;
 
     // Percorrendo o arquivo
@@ -155,5 +155,5 @@ int main(){
             return 1;
         }
     }
-    cout << "[Compilado]";
+    cout << "[Compilado]\n";
 }
