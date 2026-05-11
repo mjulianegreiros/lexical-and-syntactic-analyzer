@@ -33,8 +33,8 @@ int check_id(string s){
 }
 
 //Função que identifica um operador relacional
-int check_op(char c){
-    if(c >= '<' && c <= '>'){
+int check_op(string c){
+    if(c >= "<" && c <= ">" || c == "||" || c == "&&"){
         return 1;
     }
     return 0;
@@ -120,7 +120,7 @@ int main(){
                     buffer_s = "";
                 }
                 //Verificação dos operadores '<, =, >'
-                else if(check_op(buffer_c) && ((buffer_next >= 'a' && buffer_next <= 'z') || buffer_next == ' ')){
+                else if(check_op(buffer_s) && ((buffer_next >= 'a' && buffer_next <= 'z') || buffer_next == ' ')){
                     lexemas.push_back(buffer_s);
                     tokens.push_back(token_syntax[6]);
                     cont++;
